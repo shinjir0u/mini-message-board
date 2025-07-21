@@ -98,7 +98,7 @@ body {
 .content {
   padding: 1em 0;
   display: grid;
-  gap: 1em;
+  gap: 2em;
 }
 
 .content h1,
@@ -111,8 +111,31 @@ body {
 }
 
 header {
-  display: grid;
+  display: flex;
   gap: 0.5em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  gap: 0.5em;
+}
+
+li > a {
+  appearance: none;
+  text-decoration: none;
+  color: var(--text-muted);
+  background-color: var(--bg);
+  padding: 0.5em 1em;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+li > a:hover {
+  color: var(--text);
+  background-color: var(--bg-light);
+  border-color: var(--highlight);
 }
 
 main {
