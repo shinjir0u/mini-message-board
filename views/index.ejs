@@ -3,22 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
     <title>Message Board | <%= title %></title>
   </head>
   <body>
-    <header>
-      <h1>Message Board</h1>
-      <p>Here lies your messages</p>
-    </header>
-    <main>
-      <% messages.forEach(message => { %>
-      <div class="message">
-        <h2><%= message.text %></h2>
-        <p><%= message.user %></p>
-        <p><%= message.added %></p>
-      </div>
-      <% }) %>
-    </main>
-    <footer>Copyright &copy;</footer>
+    <div class="container content">
+      <header>
+        <h1>Message Board</h1>
+        <p>Here lies your messages</p>
+      </header>
+      <main>
+        <% messages.forEach(message => { %>
+        <div class="message">
+          <h2><%= message.text %></h2>
+          <p><%= message.user %></p>
+          <p><%= message.added %></p>
+        </div>
+        <% }) %>
+      </main>
+      <footer><p>Copyright &copy;</p></footer>
+    </div>
   </body>
 </html>

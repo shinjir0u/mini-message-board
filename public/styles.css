@@ -1,0 +1,138 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* My CSS */
+
+:root {
+  --bg-dark: oklch(0.1 0 340);
+  --bg: oklch(0.15 0 340);
+  --bg-light: oklch(0.2 0 340);
+  --text: oklch(0.96 0 340);
+  --text-muted: oklch(0.76 0 340);
+  --highlight: oklch(0.5 0 340);
+  --border: oklch(0.4 0 340);
+  --border-muted: oklch(0.3 0 340);
+  --primary: oklch(0.76 0.1 340);
+  --secondary: oklch(0.76 0.1 160);
+  --danger: oklch(0.7 0.05 30);
+  --warning: oklch(0.7 0.05 100);
+  --success: oklch(0.7 0.05 160);
+  --info: oklch(0.7 0.05 260);
+}
+
+body {
+  background-color: var(--bg-dark);
+}
+
+.container {
+  margin: 0 auto;
+  width: min(1200px, 80%);
+}
+
+.content {
+  padding: 1em 0;
+  display: grid;
+  gap: 1em;
+}
+
+.content h1,
+.content h2 {
+  color: var(--text);
+}
+
+.content p {
+  color: var(--text-muted);
+}
+
+header {
+  display: grid;
+  gap: 0.5em;
+}
+
+main {
+  display: grid;
+  gap: 1em;
+}
+
+.message {
+  background-color: var(--bg);
+  padding: 1em;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+.message:hover {
+  background-color: var(--bg-light);
+  border-color: var(--highlight);
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+}
