@@ -27,4 +27,12 @@ router.post("/add-message", (request, response) => {
   response.redirect("/");
 });
 
+router.get("/message-:id", (request, response) => {
+  const index = request.params.id;
+  response.render("message-details", {
+    title: "Message Details",
+    message: messages[index],
+  });
+});
+
 module.exports = router;

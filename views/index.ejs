@@ -5,12 +5,14 @@
     <div class="container content">
       <%- include("./partials/header.ejs") %>
       <main>
-        <% messages.forEach(message => { %>
-        <div class="message block block-highlight">
-          <h2><%= message.text %></h2>
-          <p><%= message.user %></p>
-          <p><%= message.added %></p>
-        </div>
+        <% messages.forEach((message, index) => { %>
+        <a href="/message-<%= index %>">
+          <div class="message block block-highlight">
+            <h2><%= message.text %></h2>
+            <p><%= message.user %></p>
+            <p><%= message.added %></p>
+          </div>
+        </a>
         <% }) %>
       </main>
       <%- include('./partials/footer.ejs') %>

@@ -90,6 +90,10 @@ body {
   background-color: var(--bg-dark);
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   margin: 0 auto;
   width: min(900px, 80%);
