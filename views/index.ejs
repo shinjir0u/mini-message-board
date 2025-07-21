@@ -6,7 +6,7 @@
       <%- include("./partials/header.ejs") %>
       <main>
         <% messages.forEach(message => { %>
-        <div class="message">
+        <div class="message block block-highlight">
           <h2><%= message.text %></h2>
           <p><%= message.user %></p>
           <p><%= message.added %></p>
