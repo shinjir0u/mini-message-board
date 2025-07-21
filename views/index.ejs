@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
-    <title>Message Board | <%= title %></title>
-  </head>
+  <%- include('./partials/head.ejs') %>
   <body>
     <div class="container content">
-      <header>
-        <h1>Message Board</h1>
-        <nav>
-          <ul class="nav-list">
-            <li><a href="/">Home</a></li>
-            <li><a href="/add-message">Add Message</a></li>
-          </ul>
-        </nav>
-      </header>
+      <%- include("./partials/header.ejs") %>
       <main>
         <% messages.forEach(message => { %>
         <div class="message">
@@ -26,7 +13,7 @@
         </div>
         <% }) %>
       </main>
-      <footer><p>Copyright &copy;</p></footer>
+      <%- include('./partials/footer.ejs') %>
     </div>
   </body>
 </html>

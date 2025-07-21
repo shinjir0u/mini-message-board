@@ -18,4 +18,8 @@ router.get("/", (request, response) => {
   response.render("index", { title: "Home", messages: messages });
 });
 
+router.get("/add-message", (request, response) => {
+  response.render("add-message", { title: "Add Message" });
+});
+
 module.exports = router;
