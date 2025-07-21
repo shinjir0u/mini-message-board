@@ -183,6 +183,7 @@ form input {
   border-radius: 0.25em;
   background-color: var(--highlight);
   border: none;
+  color: var(--text);
 }
 
 form input:focus {

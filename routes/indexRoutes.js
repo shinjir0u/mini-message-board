@@ -22,4 +22,9 @@ router.get("/add-message", (request, response) => {
   response.render("add-message", { title: "Add Message" });
 });
 
+router.post("/add-message", (request, response) => {
+  messages.push({ ...request.body, added: new Date() });
+  response.redirect("/");
+});
+
 module.exports = router;
