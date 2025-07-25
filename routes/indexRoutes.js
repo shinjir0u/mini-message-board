@@ -10,4 +10,8 @@ router.post("/add-message", indexController.postNewMessage);
 
 router.get("/message-:id", indexController.getMessageDetailsPage);
 
+router.use((request, response) => {
+  response.render("error", { title: "No such page" });
+});
+
 module.exports = router;
