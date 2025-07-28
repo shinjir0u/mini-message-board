@@ -1,17 +1,7 @@
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
+const db = require("../db/queries");
 
-function getHomePage(request, response) {
+async function getHomePage(request, response) {
+  const messages = await db.getMessages();
   response.render("index", { title: "Home", messages: messages });
 }
 
@@ -19,16 +9,17 @@ function getAddMessagePage(request, response) {
   response.render("add-message", { title: "Add Message" });
 }
 
-function postNewMessage(request, response) {
-  messages.push({ ...request.body, added: new Date() });
+async function postNewMessage(request, response) {
+  await db.insertMessage({ ...request.body, added: new Date() });
   response.redirect("/");
 }
 
-function getMessageDetailsPage(request, response) {
-  const index = request.params.id;
+async function getMessageDetailsPage(request, response) {
+  const id = request.params.id;
+  const message = await db.getMessageDetails(id);
   response.render("message-details", {
     title: "Message Details",
-    message: messages[index],
+    message: message,
   });
 }
 

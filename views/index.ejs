@@ -5,15 +5,18 @@
     <div class="container content">
       <%- include("./partials/header.ejs") %>
       <main>
-        <% messages.forEach((message, index) => { %>
-        <a href="/message-<%= index %>">
+        <% if (messages.length > 0) { %> <% messages.forEach((message, index) =>
+        { %>
+        <a href="/message-<%= message.id %>">
           <div class="message block block-highlight">
             <h2><%= message.text %></h2>
             <p><%= message.user %></p>
             <p><%= message.added %></p>
           </div>
         </a>
-        <% }) %>
+        <% })} else { %>
+        <p>No Messages</p>
+        <% } %>
       </main>
       <%- include('./partials/footer.ejs') %>
     </div>
