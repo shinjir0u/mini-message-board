@@ -1,4 +1,6 @@
 const { Pool } = require("pg");
+require("dotenv").config();
+const DATABASE_URL = process.env.DATABASE_URL;
 
 const local_config = {
   host: "localhost",
@@ -9,8 +11,7 @@ const local_config = {
 };
 
 const external_config = {
-  connectionString:
-    "postgresql://shinji:BnZAIf696GGjJfnpg79UnXZBlpgOUawX@dpg-d23g5pje5dus73ajhc4g-a.oregon-postgres.render.com/messages_f1q6?ssl=true",
+  connectionString: DATABASE_URL,
 };
 
 module.exports = new Pool(external_config);
